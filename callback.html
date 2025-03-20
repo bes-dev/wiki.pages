@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Callback - GitHub Wiki</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .callback-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="callback-container">
+        <h2>Completing GitHub Authentication</h2>
+        <div class="spinner"></div>
+        <p>Please wait while we complete the authentication process...</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            
+            if (code) {
+                // Exchange the code for a token through our proxy service
+                exchangeCodeForToken(code);
+            } else {
+                showError('Authorization code not found in the URL');
+            }
+            
+            async function exchangeCodeForToken(code) {
+                try {
+                    // In a real implementation, this would call your proxy service
+                    // For now, we'll simulate the token exchange
+                    const proxyUrl = 'https://your-token-exchange-proxy.com/exchange';
+                    
+                    // Mock implementation for demonstration
+                    // In production, you would make an actual fetch call to your proxy
+                    setTimeout(() => {
+                        // Simulate successful authentication
+                        const mockToken = 'mock_github_token_' + Math.random().toString(36).substring(2);
+                        localStorage.setItem('github_token', mockToken);
+                        localStorage.setItem('auth_time', Date.now().toString());
+                        
+                        // Redirect back to the main page
+                        window.location.href = '/';
+                    }, 1500);
+                    
+                } catch (error) {
+                    showError('Failed to exchange code for token: ' + error.message);
+                }
+            }
+            
+            function showError(message) {
+                document.querySelector('.spinner').style.display = 'none';
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.textContent = message;
+                document.querySelector('.callback-container').appendChild(errorElement);
+            }
+        });
+    </script>
+</body>
+</html>

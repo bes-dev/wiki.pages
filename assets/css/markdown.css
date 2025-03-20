@@ -1,0 +1,252 @@
+/* Markdown Content Styling */
+.markdown-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Headers */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.markdown-content h1 {
+    font-size: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-content h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-content h3 {
+    font-size: 1.25em;
+}
+
+.markdown-content h4 {
+    font-size: 1em;
+}
+
+.markdown-content h5 {
+    font-size: 0.875em;
+}
+
+.markdown-content h6 {
+    font-size: 0.85em;
+    color: var(--secondary-color);
+}
+
+/* First header special case */
+.markdown-content > h1:first-child,
+.markdown-content > h2:first-child,
+.markdown-content > h3:first-child {
+    margin-top: 0;
+}
+
+/* Links */
+.markdown-content a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* Paragraphs and Lists */
+.markdown-content p,
+.markdown-content ul,
+.markdown-content ol,
+.markdown-content dl,
+.markdown-content table {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    padding-left: 2em;
+}
+
+.markdown-content ul ul,
+.markdown-content ul ol,
+.markdown-content ol ul,
+.markdown-content ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.markdown-content li {
+    margin-bottom: 0.25em;
+}
+
+.markdown-content li > p {
+    margin-top: 1em;
+}
+
+.markdown-content dl {
+    padding: 0;
+}
+
+.markdown-content dl dt {
+    padding: 0;
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.markdown-content dl dd {
+    padding: 0 1em;
+    margin-bottom: 1em;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+    margin: 1em 0;
+    padding: 0 1em;
+    color: var(--secondary-color);
+    border-left: 3px solid var(--border-color);
+}
+
+.markdown-content blockquote > :first-child {
+    margin-top: 0;
+}
+
+.markdown-content blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/* Tables */
+.markdown-content table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.markdown-content table tr {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.markdown-content table tr:nth-child(2n) {
+    background-color: var(--hover-bg);
+}
+
+.markdown-content table th,
+.markdown-content table td {
+    padding: 6px 13px;
+    border: 1px solid var(--border-color);
+}
+
+.markdown-content table th {
+    font-weight: 600;
+}
+
+/* Code and Syntax Highlighting */
+.markdown-content pre {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding: 16px;
+    overflow: auto;
+    font-size: 0.85em;
+    line-height: 1.45;
+    background-color: var(--hover-bg);
+    border-radius: var(--border-radius);
+}
+
+.markdown-content code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 0.85em;
+    background-color: var(--hover-bg);
+    border-radius: var(--border-radius);
+    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.markdown-content pre code {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+}
+
+/* Images */
+.markdown-content img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: var(--background-color);
+}
+
+/* Horizontal Rule */
+.markdown-content hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: var(--border-color);
+    border: 0;
+}
+
+/* Table of Contents */
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc-list-item {
+    padding: 3px 0;
+}
+
+.toc-list-item a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: var(--border-radius);
+}
+
+.toc-list-item a:hover {
+    background-color: var(--hover-bg);
+    text-decoration: none;
+}
+
+.toc-list .toc-list {
+    padding-left: 1em;
+    margin-top: 0.25em;
+    margin-bottom: 0;
+}
+
+.toc-list-item.is-active-li > a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Markdown Preview in Editor */
+.markdown-preview {
+    padding: 16px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow-y: auto;
+    height: 100%;
+}
+
+.markdown-preview-placeholder {
+    color: var(--secondary-color);
+    font-style: italic;
+}

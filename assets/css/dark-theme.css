@@ -1,0 +1,54 @@
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --background-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --sidebar-bg: #252525;
+        --sidebar-color: #e0e0e0;
+        --sidebar-header-bg: #2c2c2c;
+        --border-color: #3d3d3d;
+        --link-color: #58a6ff;
+        --header-bg: #202020;
+        --hover-bg: #323232;
+        --button-bg: #383838;
+        --button-hover-bg: #474747;
+        --button-active-bg: #555555;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Manual dark theme toggle */
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --sidebar-bg: #252525;
+    --sidebar-color: #e0e0e0;
+    --sidebar-header-bg: #2c2c2c;
+    --border-color: #3d3d3d;
+    --link-color: #58a6ff;
+    --header-bg: #202020;
+    --hover-bg: #323232;
+    --button-bg: #383838;
+    --button-hover-bg: #474747;
+    --button-active-bg: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Specific dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        color-scheme: dark;
+    }
+    
+    :root:not([data-theme="light"]) .logo {
+        filter: brightness(0.9);
+    }
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] .logo {
+    filter: brightness(0.9);
+}

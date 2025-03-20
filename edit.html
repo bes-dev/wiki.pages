@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - GitHub Wiki</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/markdown.css">
+    <link rel="stylesheet" href="assets/css/editor.css">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+</head>
+<body>
+    <div class="app-container editor-mode">
+        <header class="editor-header">
+            <div class="editor-title">
+                <input type="text" id="page-title" placeholder="Page Title">
+            </div>
+            <div class="editor-actions">
+                <button id="save-draft-button" class="action-button">Save Draft</button>
+                <button id="preview-button" class="action-button">Preview</button>
+                <button id="save-button" class="action-button primary">Save</button>
+                <button id="cancel-button" class="action-button">Cancel</button>
+            </div>
+        </header>
+        <div class="editor-container">
+            <div class="editor-section">
+                <div class="editor-toolbar">
+                    <button data-action="bold" title="Bold">B</button>
+                    <button data-action="italic" title="Italic">I</button>
+                    <button data-action="heading" title="Heading">H</button>
+                    <button data-action="link" title="Link">🔗</button>
+                    <button data-action="image" title="Image">📷</button>
+                    <button data-action="code" title="Code">Code</button>
+                    <button data-action="list" title="List">List</button>
+                </div>
+                <textarea id="editor" class="editor-textarea" spellcheck="true"></textarea>
+            </div>
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h3>Preview</h3>
+                </div>
+                <div id="preview" class="markdown-preview"></div>
+            </div>
+        </div>
+        <div class="editor-footer">
+            <div class="metadata-section">
+                <h4>Metadata</h4>
+                <div class="metadata-form">
+                    <div class="form-group">
+                        <label for="page-description">Description:</label>
+                        <input type="text" id="page-description">
+                    </div>
+                    <div class="form-group">
+                        <label for="page-tags">Tags (comma separated):</label>
+                        <input type="text" id="page-tags">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/lib/marked.min.js"></script>
+    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/editor.js" type="module"></script>
+</body>
+</html>
